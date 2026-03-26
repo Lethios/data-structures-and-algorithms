@@ -77,24 +77,3 @@ class SinglyLinkedList:
             idx += 1
 
         return -1
-
-
-if __name__ == "__main__":
-    lst = SinglyLinkedList()
-
-    print("Appending...")
-    lst.append(1)
-    lst.append(2)
-    lst.append(3)
-
-    print("Length:", len(lst))
-    print("Search 2:", lst.search(2))
-    print("Search 5:", lst.search(5))
-
-    print("Deleting 2...")
-    lst.delete(2)
-
-    print("Search 2:", lst.search(2))
-    print("Length:", len(lst))
-    print(lst)
-    print(len(lst))
