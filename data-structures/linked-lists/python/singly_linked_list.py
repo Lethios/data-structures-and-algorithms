@@ -1,3 +1,5 @@
+from typing import Iterator
+
 class Node:
     def __init__(self, val: int = 0, next: "Node | None" = None):
         self.val: int = val
@@ -13,7 +15,7 @@ class SinglyLinkedList:
     def __len__(self) -> int:
         return self._size
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[int]:
         current = self.head
         
         while current is not None:
