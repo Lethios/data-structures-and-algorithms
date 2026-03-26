@@ -26,7 +26,7 @@ class SinglyLinkedList:
     def append(self, val: int) -> None:
         node = Node(val)
 
-        if self.head is None:
+        if not self.head:
             self.head = self.tail = node
         else:
             if self.tail is not None:
@@ -38,7 +38,7 @@ class SinglyLinkedList:
     def prepend(self, val: int) -> None:
         node = Node(val)
 
-        if self.head is None:
+        if not self.head:
             self.head = self.tail = node
         else:
             node.next = self.head
