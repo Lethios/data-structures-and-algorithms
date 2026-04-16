@@ -80,7 +80,37 @@ class BinarySearchTree:
         return self.__contains__(val)
 
     def delete(self, val: int) -> None:
-        pass
+        def _delete(node: Node | None, val: int) -> Node | None:
+            if node is None:
+                return None
+
+            if val < node.val:
+                node.left = _delete(node.left, val)
+            elif val > node.val:
+                node.right = _delete(node.right, val)
+            else:
+                if node.left is None and node.right is None:
+                    self._size -= 1
+                    return None
+
+                if node.right is None:
+                    self._size -= 1
+                    return node.left
+
+                if node.left is None:
+                    self._size -= 1
+                    return node.right
+
+                temp = node.right
+                while temp.left is not None:
+                    temp = temp.left
+
+                node.val = temp.val
+                node.right = _delete(node.right, temp.val)
+
+            return node
+
+        self.root = _delete(self.root, val)
 
     def height(self) -> int:
         def _height(node: Node | None) -> int:
