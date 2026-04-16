@@ -4,7 +4,7 @@ from typing import Iterator
 class Node:
     def __init__(
         self, val: int = 0, prev: "Node | None" = None, next: "Node | None" = None
-    ):
+    ) -> None:
         self.val: int = val
         self.prev: Node | None = prev
         self.next: Node | None = next
