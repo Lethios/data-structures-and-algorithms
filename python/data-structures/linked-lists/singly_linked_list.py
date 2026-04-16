@@ -2,7 +2,7 @@ from typing import Iterator
 
 
 class Node:
-    def __init__(self, val: int = 0, next: "Node | None" = None):
+    def __init__(self, val: int = 0, next: "Node | None" = None) -> None:
         self.val: int = val
         self.next: Node | None = next
 
