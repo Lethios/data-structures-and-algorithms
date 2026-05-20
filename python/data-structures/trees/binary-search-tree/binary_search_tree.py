@@ -40,13 +40,13 @@ class BinarySearchTree:
             if val < curr_node.val:
                 if curr_node.left is None:
                     return False
-
                 curr_node = curr_node.left
+
             elif val > curr_node.val:
                 if curr_node.right is None:
                     return False
-
                 curr_node = curr_node.right
+
             else:
                 return True
 
